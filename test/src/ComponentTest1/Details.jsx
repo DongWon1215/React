@@ -1,14 +1,24 @@
 import React from "react";
 
-function Details(props)
+// 상위 컴포넌트에서 선택된 데이터를 전달 받아서 출력하는 컴포넌트
+
+function Details({item})
 {
+    if(!item)
+    {
+        return (
+            <div>선택된 항목이 없습니다</div>
+        ) 
+        
+    }
+
     return (
         <div>
-            <h1>{props.name}</h1>
+            <h3>{item.name}</h3>
             <br/>
-            <h1>{props.index}</h1>
+            <h3>{item.index}</h3>
             <br/>
-            <h1>{props.price}</h1>
+            <h3>{item.price}</h3>
         </div>
     )
 }
